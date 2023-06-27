@@ -28,7 +28,7 @@ class Game {
     //updating what is on the screen
     this.update();
 
-    if (this.animateId % 100 === 0) {
+    if (this.animateId % 30 === 0) {
       this.projectiles.push(new Projectile(this.gameContainer));
     }
     if (this.isGameOver) {
@@ -40,10 +40,11 @@ class Game {
 
   update() {
     this.player.move();
-    const projectilesToKeep = []; 
+   // const projectilesToKeep = []; 
     this.projectiles.forEach(projectile => {
       projectile.move(); //go through the projectile array and execute move() on each item
       if (this.player.didCollide(projectile)) {
+        console.log(this.projectiles);
         projectile.element.remove();
         this.lives -= 1;
         this.livesCounter.innerText = `${this.lives}`
@@ -53,10 +54,10 @@ class Game {
 
         projectile.element.remove();
       } else {
-        projectilesToKeep.push(projectile);
+     //   projectilesToKeep.push(projectile);
       }
     });
-    this.projectiles = projectilesToKeep;
+    //this.projectiles = projectilesToKeep;
 
     if (this.lives <= 0) {
       this.isGameOver = true;

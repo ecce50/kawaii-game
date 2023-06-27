@@ -1,20 +1,34 @@
 body {
-  margin: auto;
-  width: 80%;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  color: white;
 }
 
 #game-start {
   display: flex;
-  background-color: grey;
+
+  margin: 20px auto;
+  max-width: 800px;
+  height: 70vh;
+
   flex-direction: column;
+  justify-content: center;
+  padding: 20px, 0px;
+  background-image: url(../images/bg_temp.png);
+  background-size: cover;
+  position: relative;
+
+  color: white;
 }
 
 #game-container {
   display: none;
-  align-content: center;
+
+  margin: 20px auto;
+  max-width: 800px;
+  height: 70vh;
+
+  overflow: hidden;
   position: relative;
   background-image: url(../images/bg_temp.png);
   background-size: cover;
@@ -22,4 +36,24 @@ body {
 
 #game-end {
   display: none;
+
+  margin: 20px auto;
+  max-width: 800px;
+  height: 70vh;
+
+  background-image: url(../images/bg_temp.png);
+  background-size: cover;
+  position: relative;
+}
+
+#game-won {
+  display: none;
+
+  margin: 20px auto;
+  max-width: 800px;
+  height: 70vh;
+
+  background-image: url(../images/bg_temp.png);
+  background-size: cover;
+  position: relative;
 }

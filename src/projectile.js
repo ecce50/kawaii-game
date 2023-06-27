@@ -1,10 +1,25 @@
 class Projectile {
   constructor(gameContainer) {
     this.gameContainer = gameContainer;
-    this.left = Math.floor(Math.random() * 300 + 70);
-    this.top = 0;
-    this.width = 20;
-    this.height = 20;
+
+    this.verticalOrientation;
+
+    if (Math.floor(Math.random() * 100) % 2 === 0) {
+      this.verticalOrientation = true;
+      //   console.log("vertical");
+      this.left = Math.floor(Math.random() * 800 + 50);
+      this.top = 0;
+      console.log(`V top: ${this.top} / left: ${this.left}`);
+    } else {
+      this.verticalOrientation = false;
+
+      this.top = Math.floor(Math.random() * 800);
+      this.left = 0;
+      console.log(`H top: ${this.top} / left: ${this.left}`);
+    }
+
+    this.width = 36;
+    this.height = 36;
 
     this.element = document.createElement("img");
     this.element.src = "../images/bad_donut_temp.png";
@@ -20,8 +35,15 @@ class Projectile {
   }
 
   move() {
-    this.top += 3;
-    this.updatePosition();
+    if (this.verticalOrientation === true) {
+      this.top += 3;
+      this.updatePosition();
+      console.log("update top" + this.top);
+    } else {
+      this.left += 3;
+      this.updatePosition();
+      console.log("update left" + this.left);
+    }
   }
 
   updatePosition() {
