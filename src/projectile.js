@@ -4,7 +4,7 @@ class Projectile {
 
     this.verticalOrientation;
 
-    if (Math.floor(Math.random() * 100) % 2 === 0) {
+    if (randomNumber(1, 2) === 1) {
       this.verticalOrientation = true;
       //   console.log("vertical");
       this.left = Math.floor(Math.random() * 800 + 50);
@@ -22,7 +22,20 @@ class Projectile {
     this.height = 36;
 
     this.element = document.createElement("img");
-    this.element.src = "../images/bad_donut_temp.png";
+    const imgNumber = randomNumber(1, 3);
+    const projectileImage = "";
+    switch (imgNumber) {
+      case "1":
+        projectileImage = "../images/bad_donut_temp.png";
+        break;
+      case "2":
+        projectileImage = "../images/bad_donut_temp_2.png";
+        break;
+      case "3":
+        projectileImage = "../images/bad_donut_temp_3.png";
+        break;
+    }
+    this.element.src = projectileImage;
     this.element.style.position = "absolute";
 
     this.element.style.width = `${this.width}px`;
@@ -36,11 +49,11 @@ class Projectile {
 
   move() {
     if (this.verticalOrientation === true) {
-      this.top += 3;
+      this.top += randomNumber(1, 4);
       this.updatePosition();
       console.log("update top" + this.top);
     } else {
-      this.left += 3;
+      this.left += randomNumber(1, 4);
       this.updatePosition();
       console.log("update left" + this.left);
     }
