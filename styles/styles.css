@@ -1,25 +1,25 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  width: 80%;
+  padding: 20px;
   text-align: center;
-  color:white
- 
+  color: white;
 }
 
 #game-start {
- width: 100px; /* display: none; */
+  display: flex;
+  background-color: grey;
+  flex-direction: column;
 }
 
 #game-container {
   display: none;
   align-content: center;
-  position:relative;
+  position: relative;
   background-image: url(../images/bg_temp.png);
   background-size: cover;
-
 }
 
 #game-end {
-  width: 100px;
   display: none;
 }

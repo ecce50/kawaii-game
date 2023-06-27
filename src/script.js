@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
 
     document.addEventListener("keydown", (event) => {
       const key = event.key;
-      const movementSpeed = 3
+      const movementSpeed = 3;
       const possibleKeyStrokes = [
         "ArrowLeft",
         "ArrowRight",
@@ -20,19 +20,15 @@ window.addEventListener("load", () => {
       if (possibleKeyStrokes.includes(key)) {
         switch (key) {
           case "ArrowLeft":
-          
             currentGame.player.directionX = 0 - movementSpeed;
             break;
           case "ArrowRight":
-          
             currentGame.player.directionX = movementSpeed;
             break;
           case "ArrowUp":
-           
             currentGame.player.directionY = 0 - movementSpeed;
             break;
           case "ArrowDown":
-       
             currentGame.player.directionY = movementSpeed;
             break;
         }
@@ -70,8 +66,8 @@ window.addEventListener("load", () => {
     startGame();
   });
 
+  const restartBtn = document.querySelector("#restart-button");
   restartBtn.addEventListener("click", function () {
     location.reload();
   });
 });
-
