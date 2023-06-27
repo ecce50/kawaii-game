@@ -8,6 +8,10 @@ class Game {
     this.height = 500;
     this.player = new Player(this.gameContainer);
     this.projectiles = [new Projectile(this.gameContainer)];
+    this.animateId;
+    this.isGameOver = false;
+    this.lives = 3;
+    this.score = 0;
   }
 
   start() {
@@ -22,17 +26,35 @@ class Game {
     //updating what is on the screen
     this.update();
 
-    if (Math.random() > 0.98) {
-      this.projectiles.push(new Projectile(this.gameScreen));
+    if (this.animateId % 100 === 0) {
+      this.projectiles.push(new Projectile(this.gameContainer));
     }
-
-    requestAnimationFrame(() => this.gameLoop()); //why? 02:39.
+    if (this.isGameOver) {
+      this.endGame();
+    } else {
+      this.animateId = requestAnimationFrame(() => this.gameLoop()); //why? 02:39.???
+    }
   }
 
   update() {
     this.player.move();
-    this.projectiles.forEach((projectile) => {
-      projectile.move();
+    const projectilesToKeep = []; 
+    this.projectiles.forEach(projectile => {
+      projectile.move(); //go through the projectile array and execute move() on each item
+      if (this.player.didCollide(projectile)) {
+        projectile.element.remove();
+        this.lives -= 1;
+      } else if (projectile.top > this.gameContainer.offsetHeight - projectile.height) {
+        this.score += 1;
+        projectile.element.remove();
+      } else {
+        projectilesToKeep.push(projectile);
+      }
     });
+    this.projectiles = projectilesToKeep;
+
+    if (this.lives <= 0) {
+      this.isGameOver = true;
+    }
   }
 }

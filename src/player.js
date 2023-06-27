@@ -48,4 +48,20 @@ class Player {
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
   }
+
+  didCollide(projectile) {
+    const playerRect = this.element.getBoundingClientRect(); //find the outer edges of the player rectangle
+    const projectileRect = projectile.element.getBoundingClientRect(); //finding the edges of the projectile
+
+    if ( //checking for an overlap between the two elements
+      playerRect.left < projectileRect.right &&
+      playerRect.right > projectileRect.left &&
+      playerRect.top < projectileRect.bottom &&
+      playerRect.bottom > projectileRect.top
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

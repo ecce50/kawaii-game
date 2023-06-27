@@ -21,4 +21,5 @@ body {
 
 #game-end {
   width: 100px;
+  display: none;
 }
