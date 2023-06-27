@@ -25,17 +25,17 @@ class Projectile {
     const imgNumber = randomNumber(1, 3);
     const projectileImage = "";
     switch (imgNumber) {
-      case "1":
-        projectileImage = "../images/bad_donut_temp.png";
+      case 1:
+        this.element.src = "./images/bad_donut_temp.png";
         break;
-      case "2":
-        projectileImage = "../images/bad_donut_temp_2.png";
+      case 2:
+        this.element.src = "./images/bad_donut_temp_2.png";
         break;
-      case "3":
-        projectileImage = "../images/bad_donut_temp_3.png";
+      case 3:
+        this.element.src = "./images/bad_donut_temp_3.png";
         break;
     }
-    this.element.src = projectileImage;
+
     this.element.style.position = "absolute";
 
     this.element.style.width = `${this.width}px`;
