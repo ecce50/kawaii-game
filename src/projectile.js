@@ -6,16 +6,13 @@ class Projectile {
 
     if (randomNumber(1, 2) === 1) {
       this.verticalOrientation = true;
-      //   console.log("vertical");
-      this.left = Math.floor(Math.random() * 800 + 50);
+      this.left = randomNumber(0, 800);
       this.top = 0;
-      console.log(`V top: ${this.top} / left: ${this.left}`);
     } else {
       this.verticalOrientation = false;
 
-      this.top = Math.floor(Math.random() * 800);
+      this.top = randomNumber(0, 600);
       this.left = 0;
-      console.log(`H top: ${this.top} / left: ${this.left}`);
     }
 
     this.width = 36;
@@ -49,11 +46,11 @@ class Projectile {
 
   move() {
     if (this.verticalOrientation === true) {
-      this.top += randomNumber(1, 4);
+      this.top += randomNumber(1, 10);
       this.updatePosition();
       console.log("update top" + this.top);
     } else {
-      this.left += randomNumber(1, 4);
+      this.left += randomNumber(1, 10);
       this.updatePosition();
       console.log("update left" + this.left);
     }

@@ -66,6 +66,7 @@ window.addEventListener("load", () => {
   const restartBtn = document.querySelector("#restart-button");
   restartBtn.addEventListener("click", function () {
     location.reload();
+    startGame();
   });
 });
 

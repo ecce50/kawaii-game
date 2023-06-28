@@ -3,7 +3,7 @@ class Game {
     this.startScreen = document.querySelector("#game-start");
     this.gameContainer = document.querySelector("#game-container");
     this.gameLoseScreen = document.querySelector("#game-lose");
-    this.gameWinScreen = document.querySelectorAll("#game-win");
+    this.gameWinScreen = document.querySelector("#game-win");
 
     this.width = 800;
     this.height = 600;
@@ -49,8 +49,8 @@ class Game {
     this.player.move();
     // const projectilesToKeep = [];
     this.projectiles.forEach((projectile, index) => {
-      projectile.move(); //go through the projectile array and execute move() on each item
-      if (this.player.didCollide(projectile)) {
+      projectile.move();
+      if (this.player.didCollide(projectile)) { // deals with what happens when a projectile hits the player
         console.log(this.projectiles);
         projectile.element.remove();
         this.lives -= 1;
@@ -59,16 +59,14 @@ class Game {
         projectile.top > this.gameContainer.offsetHeight - projectile.height ||
         projectile.left > this.gameContainer.offsetWidth - projectile.width
       ) {
-        projectile.element.remove();
-        this.score += 1;
-        this.scoreCounter.innerText = `${this.score}`;
-        this.projectiles.splice(index, 1);
-      } else {
-        //   projectilesToKeep.push(projectile);
+        projectile.element.remove(); //removing the sprite from the game container
+        this.score += 1; // updating the score by 1
+        this.scoreCounter.innerText = `${this.score}`; // updating the score shown with the current score
+        this.projectiles.splice(index, 1); // removing the current projectile
       }
     });
     //this.projectiles = projectilesToKeep;
-    if (this.score > 4000) {
+    if (this.score > 20) {
       console.log(this.score);
       this.isGameWon = true;
     }
@@ -88,6 +86,6 @@ class Game {
     this.player.element.remove();
     this.projectiles.forEach((projectile) => projectile.element.remove());
     this.gameContainer.setAttribute("class", "game-container-hidden");
-    this.gameLoseScreen.setAttribute("class", "game-win-visible");
+    this.gameWinScreen.setAttribute("class", "game-win-visible");
   }
 }
