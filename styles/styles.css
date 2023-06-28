@@ -21,8 +21,12 @@ body {
   color: white;
 }
 
-#game-container {
+#game-start-hidden {
   display: none;
+}
+
+#game-container {
+  display: flex;
 
   margin: 20px auto;
   max-width: 800px;
@@ -34,8 +38,13 @@ body {
   background-size: cover;
 }
 
-#game-end {
-  display: none;
+#game-container-hidden {
+   display: none;
+   flex-direction: column;
+}
+
+#game-lose {
+  display: flex;
 
   margin: 20px auto;
   max-width: 800px;
@@ -46,8 +55,12 @@ body {
   position: relative;
 }
 
-#game-won {
+#game-lose-hidden {
   display: none;
+}
+
+#game-win {
+  display: flex;
 
   margin: 20px auto;
   max-width: 800px;
@@ -56,4 +69,8 @@ body {
   background-image: url(../images/bg_temp.png);
   background-size: cover;
   position: relative;
+}
+
+#game-win-hidden {
+  display: none;
 }

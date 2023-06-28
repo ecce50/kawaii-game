@@ -8,7 +8,7 @@ class Player {
     this.directionX = 0;
     this.directionY = 0;
     this.element = document.createElement("img"); //the actual character
-    this.element.src = "../images/donut_temp.png";
+    this.element.src = "./images/donut_temp.png";
 
     this.element.style.position = "absolute";
 
@@ -18,7 +18,7 @@ class Player {
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
 
-    this.gameContainer.appendChild(this.element); //???
+    this.gameContainer.appendChild(this.element); //passing this element (the sprite) to the game container
   }
 
   move() {
