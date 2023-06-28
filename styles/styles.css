@@ -2,9 +2,10 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  color: white;
 }
 
-#game-start {
+.game-start-visible {
   display: flex;
 
   margin: 20px auto;
@@ -21,11 +22,11 @@ body {
   color: white;
 }
 
-#game-start-hidden {
+.game-start-hidden {
   display: none;
 }
 
-#game-container {
+.game-container-visible {
   display: flex;
 
   margin: 20px auto;
@@ -38,12 +39,12 @@ body {
   background-size: cover;
 }
 
-#game-container-hidden {
+.game-container-hidden {
    display: none;
    flex-direction: column;
 }
 
-#game-lose {
+.game-lose-visible {
   display: flex;
 
   margin: 20px auto;
@@ -55,11 +56,11 @@ body {
   position: relative;
 }
 
-#game-lose-hidden {
+.game-lose-hidden {
   display: none;
 }
 
-#game-win {
+.game-win-visible {
   display: flex;
 
   margin: 20px auto;
@@ -71,6 +72,6 @@ body {
   position: relative;
 }
 
-#game-win-hidden {
+.game-win-hidden {
   display: none;
 }

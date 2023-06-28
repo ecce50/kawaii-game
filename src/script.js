@@ -58,10 +58,7 @@ window.addEventListener("load", () => {
     });
   }
 
-  const startBtn = document.querySelector("#start-button"); // identifying the element with the class "start-button"
-  //const restartBtn = document.getElementById("#restart-button"); // as above, restart
-
-  // looks for the element stored in startBtn and when it's clicked, executes the function startGame()
+  const startBtn = document.querySelector("#start-button");
   startBtn.addEventListener("click", function () {
     startGame();
   });
