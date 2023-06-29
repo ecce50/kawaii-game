@@ -33,7 +33,7 @@ class Game {
     //updating what is on the screen
     this.update();
 
-    if (this.animateId % 30 === 0) {
+    if (this.animateId % 50 === 0) {
       this.projectiles.push(new Projectile(this.gameContainer));
     }
     if (this.isGameWon) {
@@ -41,7 +41,7 @@ class Game {
     } else if (this.isGameLost) {
       this.loseGame();
     } else {
-      this.animateId = requestAnimationFrame(() => this.gameLoop()); //why? 02:39.???
+      this.animateId = requestAnimationFrame(() => this.gameLoop());
     }
   }
 
@@ -66,7 +66,7 @@ class Game {
       }
     });
     //this.projectiles = projectilesToKeep;
-    if (this.score >= 10) {
+    if (this.score >= 40) {
       console.log(this.score);
       this.isGameWon = true;
     }

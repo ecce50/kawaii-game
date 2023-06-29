@@ -5,9 +5,9 @@
 body {
   max-width: 800px;
 
-  background-color: white;
+  /* background-color: white; */
 
-  /* background-color: #000313; */
+  background-color: #000313;
   margin: 0 auto;
   padding: 0;
   text-align: center;
@@ -51,8 +51,17 @@ body {
 }
 
 .bouncing-donut {
-  
+  width: 160px;
+  height: 160px;
+
+  align-self: end;
   position: absolute;
+  bottom: 36px;
+  left: 48px;
+  animation-duration: 2000ms;
+  animation-name: rotate-donut;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .game-start-visible > h1 {
@@ -77,6 +86,11 @@ body {
   display: none;
 }
 
+.start-button {
+  background-color: #fa9fe0;
+  color: #fff;
+}
+
 .game-container-visible {
   display: flex;
   height: 600px;
@@ -93,12 +107,27 @@ body {
 }
 
 .game-lose-visible {
-  display: flex;
   height: 600px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 
   background-image: url(../images/background_800x600.png);
   background-size: cover;
   position: relative;
+}
+
+.game-lose-visible > h1 {
+  width: 30vw;
+  font-size: 6rem;
+  line-height: 6rem;
+   color: #fff;
+  text-shadow: 0 0 7px #fff, /* 0 0 10px #fff, */ 0 0 21px #fff,
+    /* 0 0 42px #FDC9F3, */ 0 0 82px #d40f0f,
+    /* 0 0 92px #FDC9F3, */ /* 0 0 102px #FDC9F3, */ 0 0 151px #d40f0f;
 }
 
 .game-lose-hidden {
@@ -118,6 +147,27 @@ body {
   position: relative;
 }
 
+.game-win-visible > h1 {
+  width: 30vw;
+  font-size: 6rem;
+  line-height: 6rem;
+   color: #fff;
+  text-shadow: 0 0 7px #fff, /* 0 0 10px #fff, */ 0 0 21px #fff,
+    /* 0 0 42px #FDC9F3, */ 0 0 82px #d40f88,
+    /* 0 0 92px #FDC9F3, */ /* 0 0 102px #FDC9F3, */ 0 0 151px #d40f88;
+}
+
+
+
 .game-win-hidden {
   display: none;
+}
+
+@keyframes rotate-donut {
+  from {
+    transform: rotate(0deg) translate(0px);
+  }
+  to {
+    transform: rotate(359deg) translate(24px);
+  }
 }

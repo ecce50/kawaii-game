@@ -23,7 +23,7 @@ class Projectile {
     switch (imgNumber) {
       case 1:
         this.element.src = "./images/drink_enemy.png";
-        const drinkSizeMultiplier = 8;
+        const drinkSizeMultiplier = 6;
          this.width = 240 / drinkSizeMultiplier;
          this.height = 426 / drinkSizeMultiplier;
         break;
@@ -54,11 +54,11 @@ class Projectile {
 
   move() {
     if (this.verticalOrientation === true) {
-      this.top += randomNumber(1, 10);
+      this.top += randomNumber(1, 5);
       this.updatePosition();
       console.log("update top" + this.top);
     } else {
-      this.left += randomNumber(1, 10);
+      this.left += randomNumber(1, 5);
       this.updatePosition();
       console.log("update left" + this.left);
     }
