@@ -8,7 +8,7 @@ class Player {
     this.directionX = 0;
     this.directionY = 0;
     this.element = document.createElement("img"); //the actual character
-    this.element.src = "./images/donut_temp.png";
+    this.element.src = "./images/donut_character.png";
 
     this.element.style.position = "absolute";
 

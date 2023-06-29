@@ -66,7 +66,7 @@ class Game {
       }
     });
     //this.projectiles = projectilesToKeep;
-    if (this.score > 20) {
+    if (this.score >= 10) {
       console.log(this.score);
       this.isGameWon = true;
     }

@@ -15,21 +15,29 @@ class Projectile {
       this.left = 0;
     }
 
-    this.width = 36;
-    this.height = 36;
+   
 
     this.element = document.createElement("img");
     const imgNumber = randomNumber(1, 3);
-    const projectileImage = "";
+    
     switch (imgNumber) {
       case 1:
-        this.element.src = "./images/bad_donut_temp.png";
+        this.element.src = "./images/drink_enemy.png";
+        const drinkSizeMultiplier = 8;
+         this.width = 240 / drinkSizeMultiplier;
+         this.height = 426 / drinkSizeMultiplier;
         break;
       case 2:
-        this.element.src = "./images/bad_donut_temp_2.png";
+        this.element.src = "./images/eclair_enemy.png";
+        const eclairSizeMultiplier = 8;
+         this.width = 640 / eclairSizeMultiplier;
+         this.height = 240 / eclairSizeMultiplier;
         break;
       case 3:
-        this.element.src = "./images/bad_donut_temp_3.png";
+        this.element.src = "./images/lolly_enemy.png";
+        const lollySizeMultiplier = 8;
+         this.width = 240 / lollySizeMultiplier;
+         this.height = 612 / lollySizeMultiplier;
         break;
     }
 
