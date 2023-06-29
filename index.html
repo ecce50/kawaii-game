@@ -3,40 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kawaii Donut Vampire Slayers in Space</title>
+    <title>Kawaii Donut Dodgeball</title>
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Darumadrop+One"
+    href="https://fonts.googleapis.com/css?family=Darumadrop+One">
   </head>
   <body>
     <main>
-      <div id="game-start" class="game-start-visible">
+      <div id="game-start" class="game-start-visible glow">
+        <img src="./images/donut_character.png" alt="" class="bouncing-donut">
         <h1>Kawaii Donut Dodgeball</h1>
         <h2>Dodge the sweet treats or die trying!</h2>
-        <button class="start-button">Start</button>
-        <button id="easy-level" class="level-button">Easy</button>
-        <button id="medium-level" class="level-button">Medium</button>
-        <button id="hard-level" class="level-button">Hard</button>
-
-        <button class="mute-button">Unmute sound</button>
-        <p>Aim the donut using the arrow keys and press Space to fire.</p>
+        <button class="start-button button">Start</button>
+        <button class="mute-button button">Unmute</button>
+        <p>Move the donut using the arrow keys and try not to get hit by anything</p>
         <img src="" alt="" />
       </div>
       <div id="game-container" class="game-container-hidden">
         <p>Stats:</p>
         <p>Score: <span id="score">0</span></p>
         <p>Lives: <span id="lives">3</span></p>
-        <!-- <p>Shields: <span id="shields">3</span></p> -->
       </div>
       <div id="game-lose" class="game-lose-hidden">
         <h1>You suck at this!</h1>
         <h2>Try again. And do better!</h2>
-        <button class="restart-button">Redeem yourself</button>
+        <button class="restart-button button">Redeem yourself</button>
       </div>
       <div id="game-win" class="game-win-hidden">
         <h1>OK I guess</h1>
         <h2>Now do it again. Faster!</h2>
-        <button class="restart-button">Try again!</button>
+        <button class="restart-button button">Try again!</button>
       </div>
     </main>
 

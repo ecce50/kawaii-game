@@ -60,15 +60,15 @@ window.addEventListener("load", () => {
 
   const startBtn = document.querySelector(".start-button");
   startBtn.addEventListener("click", function () {
-    // this.gameContainer.setAttribute("class", "game-container-visible");
-
     startGame();
   });
 
-  const restartBtn = document.querySelector(".restart-button");
-  restartBtn.addEventListener("click", function () {
+  const restartBtn = document.querySelectorAll(".restart-button");
+  let clickEvent = () => {
     location.reload();
-    startGame();
+  }
+  restartBtn.forEach((item) => {
+    item.addEventListener("click", clickEvent);
   });
 });
 
@@ -80,16 +80,15 @@ const music = new Audio("path");
 const muteButton = document.querySelector(".mute-button");
 
 window.onload = () => {
-  muteButton.innerText = "Unmute sound";
+  muteButton.innerText = "Unmute";
   muteButton.addEventListener("click", () => {
     const buttonText = muteButton.innerText;
-    if (buttonText === "Unmute sound") {
-      muteButton.innerText = "Mute sound";
+    if (buttonText === "Unmute") {
+      muteButton.innerText = "Mute";
       music.play();
     } else {
-      muteButton.innerText = "Unmute sound";
+      muteButton.innerText = "Unmute";
       music.pause;
     }
   });
 };
-

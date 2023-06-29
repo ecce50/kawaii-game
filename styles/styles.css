@@ -1,42 +1,85 @@
+* {
+  font-family: "darumadrop one";
+}
+
 body {
-  margin: 0;
+  max-width: 800px;
+
+  background-color: white;
+
+  /* background-color: #000313; */
+  margin: 0 auto;
   padding: 0;
   text-align: center;
   color: white;
-  font-family: 'darumadrop one';
+}
+
+.button {
+  width: 240px;
+  height: 36px;
+  background-color: white;
+  color: #000313;
+  font-size: 1.5rem;
+  line-height: 1rem;
+  border: 2px solid white;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.glow {
+  /* Glow */
+  color: #fff;
+  text-shadow: 0 0 7px #fff, /* 0 0 10px #fff, */ 0 0 21px #fff,
+    /* 0 0 42px #FDC9F3, */ 0 0 82px #fa9fe0,
+    /* 0 0 92px #FDC9F3, */ /* 0 0 102px #FDC9F3, */ 0 0 151px #fa9fe0;
 }
 
 .game-start-visible {
+  height: 600px;
   display: flex;
-
-  margin: 20px auto;
-  max-width: 800px;
-  height: 70vh;
 
   flex-direction: column;
   justify-content: center;
-  padding: 20px, 0px;
-  background-image: url(../images/background_800x600.png);
+  align-items: center;
+  gap: 16px;
+
+  background-image: url(../images/start_screen_bg_800x600.png);
   background-size: cover;
   position: relative;
 
   color: white;
 }
 
-.game-start-hidden {
-  display: none;
+.bouncing-donut {
+  
+  position: absolute;
 }
 
-.level-button {
+.game-start-visible > h1 {
+  width: 30vw;
+  font-size: 4rem;
+  line-height: 4rem;
+  /* Text gradient */
+  background-color: #fa9fe0;
+  background-image: linear-gradient(45deg, #fa9fe0, #fff);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.game-start-visible > p {
+  width: 25vw;
+}
+
+.game-start-hidden {
   display: none;
 }
 
 .game-container-visible {
   display: flex;
-
-  margin: 20px auto;
-  max-width: 800px;
-  height: 70vh;
+  height: 600px;
 
   overflow: hidden;
   position: relative;
@@ -45,16 +88,13 @@ body {
 }
 
 .game-container-hidden {
-   display: none;
-   flex-direction: column;
+  display: none;
+  flex-direction: column;
 }
 
 .game-lose-visible {
   display: flex;
-
-  margin: 20px auto;
-  max-width: 800px;
-  height: 70vh;
+  height: 600px;
 
   background-image: url(../images/background_800x600.png);
   background-size: cover;
@@ -67,25 +107,15 @@ body {
 
 .game-win-visible {
   display: flex;
+  height: 600px;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  margin: 20px auto;
-  max-width: 800px;
-  height: 70vh;
-
   background-image: url(../images/background_800x600.png);
   background-size: cover;
   position: relative;
-}
-
-.game-win-visible > button {
-width: 300px;
-height: 100px;
-background-color: pink;
-font-size: 3rem;
-border-radius: 2rem;
 }
 
 .game-win-hidden {
