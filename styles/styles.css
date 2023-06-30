@@ -93,12 +93,15 @@ body {
 
 .game-container-visible {
   display: flex;
+  flex-direction: flex-start;
+  gap: 16px;
   height: 600px;
 
   overflow: hidden;
   position: relative;
   background-image: url(../images/background_800x600.png);
   background-size: cover;
+
 }
 
 .game-container-hidden {
@@ -156,7 +159,6 @@ body {
     /* 0 0 42px #FDC9F3, */ 0 0 82px #d40f88,
     /* 0 0 92px #FDC9F3, */ /* 0 0 102px #FDC9F3, */ 0 0 151px #d40f88;
 }
-
 
 
 .game-win-hidden {

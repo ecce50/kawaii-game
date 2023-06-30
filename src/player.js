@@ -9,6 +9,7 @@ class Player {
     this.directionY = 0;
     this.element = document.createElement("img"); //the actual character
     this.element.src = "./images/donut_character.png";
+    this.element.className = "glow";
 
     this.element.style.position = "absolute";
 
