@@ -19,7 +19,6 @@ class Game {
   }
 
   start() {
-    console.log("Start button clicked");
     this.gameContainer.style.width = `${this.width}px`; // setting its width
     this.gameContainer.style.height = `${this.height}px`; //setting its height
 
@@ -50,8 +49,9 @@ class Game {
     // const projectilesToKeep = [];
     this.projectiles.forEach((projectile, index) => {
       projectile.move();
-      if (this.player.didCollide(projectile)) { // deals with what happens when a projectile hits the player
-        console.log(this.projectiles);
+      if (this.player.didCollide(projectile)) {
+        // deals with what happens when a projectile hits the player
+
         projectile.element.remove();
         this.lives -= 1;
         this.livesCounter.innerText = `${this.lives}`;
@@ -67,7 +67,6 @@ class Game {
     });
     //this.projectiles = projectilesToKeep;
     if (this.score >= 20) {
-      console.log(this.score);
       this.isGameWon = true;
     }
     if (this.lives <= 0) {

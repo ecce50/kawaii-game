@@ -76,7 +76,7 @@ function randomNumber(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
-const music = new Audio("path");
+const music = new Audio("../music/Invisible.mp3");
 const muteButton = document.querySelector(".mute-button");
 
 window.onload = () => {
